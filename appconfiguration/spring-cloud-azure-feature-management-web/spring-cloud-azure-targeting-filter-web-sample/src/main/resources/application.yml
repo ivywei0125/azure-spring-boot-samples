@@ -3,21 +3,16 @@ feature-management:
     beta:
       enabled-for:
         -
-          name: targetingFilter
+          name: timeWindowFilter
           parameters:
-            users:
-              - Jeff
-              - Alicia
-            groups:
-              -
-                name: Ring0
-                rolloutPercentage: 100
-              -
-                name: Ring1
-                rolloutPercentage: 100
-            defaultRolloutPercentage: 50
-            exclusion:
-              users:
-                - Ross
-              groups:
-                - Ring2
+            Start: "2024-05-06T09:00:00+08:00"
+            End: "2024-05-06T17:00:00+08:00"
+            Recurrence:
+              Pattern:
+                Type: "Weekly"
+                Interval: 1
+                DaysOfWeek:
+                  - Monday
+                  - Tuesday
+              Range:
+                Type: "NoEnd"

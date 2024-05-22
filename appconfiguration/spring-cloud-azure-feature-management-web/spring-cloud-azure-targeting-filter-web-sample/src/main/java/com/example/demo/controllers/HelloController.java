@@ -18,7 +18,7 @@ public class HelloController {
 
     @GetMapping("/welcome")
     public String mainWithParam(Model model) {
-        model.addAttribute("Beta", featureManager.isEnabledAsync("beta").block());
+        model.addAttribute("Beta", featureManager.isEnabled("beta"));
         return "welcome";
     }
 }
